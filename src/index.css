@@ -1,0 +1,152 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 10px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  /* border-radius: 25px; */
+  background: #F0F0F0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+input{
+  border-radius: 10px !important;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #3FBFBF;
+    color: #ffffff;
+  }
+}
+.error_msg, .success_msg{
+  display:none
+}
+/* Landing page */
+.text-button{
+  background-color: #3FBFBF;
+  border-radius: 5px;
+  padding: 5px;
+  color: #ffffff;
+}
+.text-button a{
+  color: #ffffff;
+}
+.text-button button{
+  border: none;
+  
+}
+/* Login */
+.inputs{
+  padding: 5px;
+}
+.form-labels{
+  float: left;
+  font-weight: bold;
+  /* font-size: 1px; */
+}
+/* TaskList */
+.content{
+  padding: 10px;
+}
+.content .head{
+  display: flex;
+  justify-content: space-between;
+  /* gap: ; */
+}
+.content .lists{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+.bi-plus-circle, .bi-dash-circle, .bi-pencil-square{
+  font-size: 15px;
+  color: #3FBFBF;
+}
+.bi-plus-circle{
+  display: none;
+}
+.sublist{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* gap: 80px; */
+}
+.delete button{
+  background-color: White;
+}
+/* copleted */
+.tab-menu{
+  display: flex;
+  justify-content: space-between;
+}
+.bi-arrow-left-circle, .bi-house,.bi-box-arrow-left{
+  font-size: 20px;
+  color: #3FBFBF;
+}
+.bi-arrow-right-circle{
+  font-size: 10px;
+  color: white;
+}
+.profile-img{
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+#addPic{
+  visibility: hidden;
+}
