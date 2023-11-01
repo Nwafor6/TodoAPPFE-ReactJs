@@ -39,7 +39,7 @@ const Login =()=>{
                 username:data.user.username,
                 id:data.user._id
             }
-            const myPics=data.profileImage
+            const myPics=data.user.profileImage
             localStorage.setItem("myPics", JSON.stringify(myPics))
             localStorage.setItem("user", JSON.stringify(user))
             console.log(data.user)
