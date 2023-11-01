@@ -39,7 +39,7 @@ async function handleUserRegister(e){
         document.querySelector(".success_msg").style.display="block"
         setTimeout(()=>{
             document.querySelector(".success_msg").style.display="none"
-            navigate("/")
+            navigate("/login")
         }, 2000)
     }else{
         document.querySelector("#sbtBtn").style.display="block"
