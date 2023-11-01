@@ -129,11 +129,11 @@ const Dashboard= ()=>{
                 email:data.email,
                 username:data.username,
                 id:data._id,
-                profileImage:`${BASE_URL}${data.profileImage}`
+                profileImage:data.profileImage
             }
-            localStorage.setItem("myPics", JSON.stringify(`${BASE_URL}${data.profileImage}`))
+            localStorage.setItem("myPics", JSON.stringify(data.profileImage))
             localStorage.setItem("user", JSON.stringify(user))
-            setProfileImage(`${BASE_URL}${data.profileImage}`)
+            setProfileImage(data.profileImage)
             setresponse_msg("Profile updated.")
             document.querySelector(".success_msg").style.display="block"
             document.querySelector(".error_msg").style.display="none"

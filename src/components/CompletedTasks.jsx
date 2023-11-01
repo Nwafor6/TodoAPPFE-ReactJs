@@ -34,7 +34,7 @@ const CompletedTask= ()=>{
                             <img src={myPics} alt="" className="profile-img"/>
                         </div>
                         <div className="text">
-                            <p>Congratulations, Sinach! you have completed these tasks.</p>
+                            <p>Congratulations! you have completed these tasks.</p>
                         </div>
                     </div>
                     <div className="col-md-6 col-sm-12" >

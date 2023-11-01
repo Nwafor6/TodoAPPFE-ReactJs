@@ -88,7 +88,7 @@ const TaskList= ()=>{
                             <img src={myPics} alt="" className="profile-img"/>
                         </div>
                         <div className="text">
-                            <p>Welcome Back, Sinach!</p>
+                            <p>Welcome Back!</p>
                         </div>
                     </div>
                     <div className="col-md-6 col-sm-12" >

@@ -14,7 +14,7 @@ async function handleUserRegister(e){
     e.preventDefault();
     document.querySelector("#sbtBtn").style.display="none"
     document.querySelector("#resbtn").style.display="inline-block"
-    const response = await fetch(`${BASE_URL}signup`,{
+    const response = await fetch(`${BASE_URL}/signup`,{
         method:"POST",
         body: JSON.stringify({email:email, password:password, username:username}),
         headers:{
