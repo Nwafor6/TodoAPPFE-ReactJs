@@ -77,17 +77,17 @@ async function handleUserRegister(e){
                 <div className="row mt-3">
                     <div className="col-md-6 col-sm-12 mb-3 inputs">
                         <label htmlFor="email" className="mb-2 form-labels">Email Adress</label>
-                        <input type="email" className="form-control" name="email" placeholder="Your Email" aria-label="First name" value={email} onChange={(e) => setemail(e.target.value)}/>
+                        <input type="email" className="form-control" name="email" placeholder="Your Email" aria-label="First name" value={email} onChange={(e) => setemail(e.target.value)} required/>
                     </div>
                     <div className="col-md-6 col-sm-12 mb-3 inputs">
                         <label htmlFor="email" className="mb-2 form-labels">Username</label>
-                        <input type="text" className="form-control" placeholder="Username" name="username" aria-label="Last name" value={username} onChange={(e) => setusername(e.target.value)}/>
+                        <input type="text" className="form-control" placeholder="Username" name="username" aria-label="Last name" value={username} onChange={(e) => setusername(e.target.value)} required/>
                     </div>
                 </div>
                 <div className="row g-3">
                     <div className="col-md-6 col-sm-12 mb-3 inputs">
                         <label htmlFor="email" className="mb-2 form-labels">Password</label>
-                        <input type="password" className="form-control" name="password" placeholder="Your password" aria-label="password" value={password} onChange={(e) => setpassword(e.target.value)}/>
+                        <input type="password" className="form-control" name="password" placeholder="Your password" aria-label="password" value={password} onChange={(e) => setpassword(e.target.value)} required/>
                     </div>
                     <div className="text-button text-center mt-5" id="sbtBtn">
                         <button  type="submit" id="sbtbtn2">Sign up</button>
