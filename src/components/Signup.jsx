@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import BASE_URL from "../components/apiConfig"
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Signup =()=>{
@@ -13,7 +14,7 @@ async function handleUserRegister(e){
     e.preventDefault();
     document.querySelector("#sbtBtn").style.display="none"
     document.querySelector("#resbtn").style.display="inline-block"
-    const response = await fetch("http://localhost:8000/signup",{
+    const response = await fetch(`${BASE_URL}signup`,{
         method:"POST",
         body: JSON.stringify({email:email, password:password, username:username}),
         headers:{
