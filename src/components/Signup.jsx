@@ -83,7 +83,7 @@ async function handleUserRegister(e){
                         <input type="password" className="form-control" name="password" placeholder="Your password" aria-label="password" value={password} onChange={(e) => setpassword(e.target.value)}/>
                     </div>
                     <div className="text-button text-center mt-5" id="sbtBtn">
-                        <button  type="submit">Sign up</button>
+                        <button  type="submit" id="sbtbtn2">Sign up</button>
                     </div>
                     
                 </div>

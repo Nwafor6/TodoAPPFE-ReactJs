@@ -103,7 +103,7 @@ const Login =()=>{
                                 </div>
                             </div>
                             <div className="text-button text-center mt-5" id="sbtBtn">
-                                <button  type="submit">Sign in</button>
+                                <button  type="submit" id="sbtbtn2">Sign in</button>
                             </div>
                             <div className="spinner-border text-center text-primary mt-5" role="status" id="resbtn">
                                 <span class="visually-hidden">Loading...</span>
@@ -121,6 +121,3 @@ const Login =()=>{
 }
 
 export default Login
-{/* <div class="spinner-border text-light" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div> */}

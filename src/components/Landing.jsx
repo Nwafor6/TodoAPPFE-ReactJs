@@ -25,7 +25,7 @@ const LandingPage = ()=>{
                                 </p>
                             </div>
                             <div className="text-button text-center mt-5">
-                                <Link  to="/login">Get started</Link>
+                                <Link  to="/login" id="sbtbtn2">Get started</Link>
                             </div>
                         </div>
                     </div>
