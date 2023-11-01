@@ -10,6 +10,9 @@ const [password, setpassword]=useState("");
 const [username, setusername]=useState("");
 const [response_msg, setresponse_msg]=useState("");
 
+localStorage.removeItem("user_data")
+localStorage.removeItem("user")
+localStorage.removeItem("myPics")
 async function handleUserRegister(e){
     e.preventDefault();
     document.querySelector("#sbtBtn").style.display="none"
@@ -29,6 +32,8 @@ async function handleUserRegister(e){
         console.log(response, "data is ok")
         // localStorage.setItem("user_data", data.token)
         localStorage.removeItem("user_data")
+        localStorage.removeItem("user")
+        localStorage.removeItem("myPics")
         setresponse_msg(data.message)
         console.log(data)
         document.querySelector(".success_msg").style.display="block"
