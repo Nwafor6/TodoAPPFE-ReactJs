@@ -5,7 +5,7 @@
 This project is a ToDo web application built with React that interacts with the Express.js API endpoint providing ToDo management capabilities for mobile devices. Users can register, log in, create, update, and delete tasks through this application.
 
 ## Live link
-- [https://mytaskz.netlify.app][https://mytaskz.netlify.app]
+- [https://mytaskz.netlify.app]
 
 ## Prerequisites
 
