@@ -102,6 +102,8 @@ const Dashboard= ()=>{
         // }
     }
     async function handleUploadPhoto(){
+        document.querySelector("#addPicbtn").style.display="none"
+        document.querySelector("#btnload").style.display="inline-block"
         const formData = new FormData();
         formData.append('file', selectedFile);
         console.log(selectedFile, "Heloo 22word")
@@ -121,6 +123,7 @@ const Dashboard= ()=>{
             fileInput.value = '';
             document.querySelector("#editPicbtn").style.display="block"
             document.querySelector("#addPicbtn").style.display="none"
+            document.querySelector("#btnload").style.display="none"
             setSelectedFile("")
             const user={
                 email:data.email,
@@ -138,6 +141,9 @@ const Dashboard= ()=>{
                 document.querySelector(".success_msg").style.display="none"
             }, 5000)
         }else{
+            document.querySelector("#editPicbtn").style.display="block"
+            document.querySelector("#addPicbtn").style.display="none"
+            document.querySelector("#btnload").style.display="none"
             setresponse_msg(data.detail)
             document.querySelector(".error_msg").style.display="block"
             document.querySelector(".success_msg").style.display="none"
@@ -178,7 +184,15 @@ const Dashboard= ()=>{
                     <div className="col-md-6 col-sm-12 top">
                         <div className="upload_img">
                             <div><img src={myPics} alt="" className="profile-img mb-3" /></div>
-                            <div><i className="bi bi-plus-circle" id="addPicbtn" onClick={()=>{handleUploadPhoto()}}></i><i class="bi bi-pencil-square" onClick={selectPhoto} id="editPicbtn"></i></div>
+                            <div className="text-center">
+                                <button id="addPicbtn" type="submit" onClick={()=>{handleUploadPhoto()}}><i className="bi bi-plus-circle" id="addPicbtn2"></i></button>
+                                <i class="bi bi-pencil-square" onClick={selectPhoto} id="editPicbtn"></i>
+                                <button id="btnload">
+                                <div className="spinner-border text-center text-primary mt-3 bg" role="status" id="resbtn1"> 
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                </button>
+                                </div>
                             <form>
                                 <input type="file" name="profile_img" id="addPic" ref={fileInputRef} onChange={handleFileChange}/>
                             </form>

@@ -117,8 +117,21 @@ input{
   font-size: 15px;
   color: #3FBFBF;
 }
-#addPicbtn, #resbtn{
+
+#addPicbtn, #resbtn, #btnload{
   display: none;
+}
+#addPicbtn2, #editPicbtn{
+  font-size: 30px;
+}
+#addPicbtn{
+  background-color: #F0F0F0 !important;
+  width: 100%;
+  
+}
+#btnload{
+  background-color: #F0F0F0 !important;
+  width: 100%;
 }
 .sublist{
   display: flex;
