@@ -27,7 +27,8 @@ async function handleUserRegister(e){
         document.querySelector("#sbtBtn").style.display="block"
         document.querySelector("#resbtn").style.display="none"
         console.log(response, "data is ok")
-        localStorage.setItem("user_data", data.token)
+        // localStorage.setItem("user_data", data.token)
+        localStorage.removeItem("user_data")
         setresponse_msg(data.message)
         console.log(data)
         document.querySelector(".success_msg").style.display="block"
