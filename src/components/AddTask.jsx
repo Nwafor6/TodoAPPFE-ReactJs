@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react"
 import BASE_URL from "../components/apiConfig"
 
 const AddTask= ()=>{
-
+    const myPics= JSON.parse(localStorage.getItem("myPics"));
     const[title, setTitle]=useState("");
     const [response_msg, setresponse_msg]=useState("");
     async function handleAddTask(e){
@@ -49,10 +49,10 @@ const AddTask= ()=>{
                 <div className="row">
                     <div className="col-md-6 col-sm-12 top">
                         <div className="img">
-                            <img src="/images/Ellipse2.png" alt="" />
+                            <img src={myPics} alt="" />
                         </div>
                         <div className="text">
-                            <p>Welcome Back, Sinach!</p>
+                            <p>Welcome Back!</p>
                         </div>
                     </div>
                     <div className="col-md-6 col-sm-12" >
