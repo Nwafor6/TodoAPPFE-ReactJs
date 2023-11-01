@@ -48,8 +48,8 @@ const AddTask= ()=>{
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-sm-12 top">
-                        <div className="img">
-                            <img src={myPics} alt="" />
+                        <div className="img mb-3">
+                             <img src={myPics} alt="" className="profile-img"/>
                         </div>
                         <div className="text">
                             <p>Welcome Back!</p>
