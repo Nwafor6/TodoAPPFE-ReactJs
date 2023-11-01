@@ -23,6 +23,8 @@ const Dashboard= ()=>{
     const myPics= JSON.parse(localStorage.getItem("myPics"));
     console.log(myPics, "helo1234")
     async function handleUpdateProfile(e){
+        document.querySelector("#sbtBtn").style.display="none"
+        document.querySelector("#resbtn").style.display="inline-block"
         e.preventDefault();
         const response= await fetch(`${BASE_URL}/update-profile/${userData.id}`,{
             method:"PUT",
@@ -34,6 +36,8 @@ const Dashboard= ()=>{
         })
         const data = await response.json()
         if (response.ok){
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             const user={
                 email:data.email,
                 username:data.username,
@@ -49,6 +53,8 @@ const Dashboard= ()=>{
                 document.querySelector(".success_msg").style.display="none"
             }, 5000)
         }else{
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             setresponse_msg(data.detail)
             document.querySelector(".error_msg").style.display="block"
             document.querySelector(".success_msg").style.display="none"
@@ -238,8 +244,16 @@ const Dashboard= ()=>{
                                 </div>
                                 
                             </div>
-                            <div className="text-button text-center mt-3 p-0" style={{float:"right"}}>
+                            {/* <div className="text-button text-center mt-3 p-0" style={{float:"right"}}>
                                 <button  type="submit">Update</button>
+                            </div> */}
+                            <div style={{float:"right"}}>
+                                <div className="text-button text-center mt-3 p-0" id="sbtBtn">
+                                    <button  type="submit">Update</button>
+                                </div>
+                                <div className="spinner-border text-center text-primary mt-3" role="status" id="resbtn"> 
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
                         </form>
                     </div>

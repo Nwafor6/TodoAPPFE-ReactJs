@@ -117,7 +117,7 @@ input{
   font-size: 15px;
   color: #3FBFBF;
 }
-.bi-plus-circle{
+#addPicbtn, #resbtn{
   display: none;
 }
 .sublist{

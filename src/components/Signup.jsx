@@ -11,6 +11,8 @@ const [response_msg, setresponse_msg]=useState("");
 
 async function handleUserRegister(e){
     e.preventDefault();
+    document.querySelector("#sbtBtn").style.display="none"
+    document.querySelector("#resbtn").style.display="inline-block"
     const response = await fetch("http://localhost:8000/signup",{
         method:"POST",
         body: JSON.stringify({email:email, password:password, username:username}),
@@ -21,6 +23,8 @@ async function handleUserRegister(e){
     })
     const data = await response.json()
     if (response.ok){
+        document.querySelector("#sbtBtn").style.display="block"
+        document.querySelector("#resbtn").style.display="none"
         console.log(response, "data is ok")
         localStorage.setItem("user_data", data.token)
         setresponse_msg(data.message)
@@ -31,6 +35,8 @@ async function handleUserRegister(e){
             navigate("/")
         }, 2000)
     }else{
+        document.querySelector("#sbtBtn").style.display="block"
+        document.querySelector("#resbtn").style.display="none"
         console.log(response, "data is bad")
         setresponse_msg(data.message)
         console.log(data.message)
@@ -76,9 +82,13 @@ async function handleUserRegister(e){
                         <label htmlFor="email" className="mb-2 form-labels">Password</label>
                         <input type="password" className="form-control" name="password" placeholder="Your password" aria-label="password" value={password} onChange={(e) => setpassword(e.target.value)}/>
                     </div>
-                    <div className="text-button text-center mt-5">
+                    <div className="text-button text-center mt-5" id="sbtBtn">
                         <button  type="submit">Sign up</button>
                     </div>
+                    
+                </div>
+                <div className="spinner-border text-center text-primary mt-5" role="status" id="resbtn">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
                 <p className="mt-2"><small> Already have a account? <Link to={"/login"}>Login</Link></small></p>
                 

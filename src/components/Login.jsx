@@ -15,6 +15,9 @@ const Login =()=>{
     const [email, setemail]=useState("");
     const [password, setpassword]=useState("");
     async function handleLogin(e){
+        document.querySelector("#sbtBtn").style.display="none"
+        document.querySelector("#resbtn").style.display="inline-block"
+    
         e.preventDefault();
         console.log(password, "Jellll")
         const response = await fetch(`${BASE_URL}/login`,{
@@ -29,6 +32,8 @@ const Login =()=>{
         if (response.ok){
             console.log(response, "data is ok")
             localStorage.setItem("user_data", data.token)
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             const user={
                 email:data.user.email,
                 username:data.user.username,
@@ -46,6 +51,8 @@ const Login =()=>{
                 navigate("/dashboard")
             }, 2000)
         }else{
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             console.log(response, "data is bad")
             setresponse_msg(data.message)
             console.log(data.message)
@@ -95,8 +102,11 @@ const Login =()=>{
                                 <p style={{float:"right", fontSize:"10px"}} ><Link to="/forgot-password">Forgotten password ?</Link></p>
                                 </div>
                             </div>
-                            <div className="text-button text-center mt-5">
+                            <div className="text-button text-center mt-5" id="sbtBtn">
                                 <button  type="submit">Sign in</button>
+                            </div>
+                            <div className="spinner-border text-center text-primary mt-5" role="status" id="resbtn">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
                             <p className="mt-2"><small>Don't have a account? <Link to={"/signup"}>Sign up</Link></small></p>
                             
@@ -111,3 +121,6 @@ const Login =()=>{
 }
 
 export default Login
+{/* <div class="spinner-border text-light" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div> */}

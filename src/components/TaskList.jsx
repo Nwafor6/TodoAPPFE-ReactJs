@@ -110,7 +110,7 @@ const TaskList= ()=>{
                         <div className="content bg-white" id="content">
                             
                             <div className="head">
-                                <div className="text1"><h6>Daily Task</h6></div>
+                                <div className="text1"><h6>Daily Tasks</h6></div>
                                 <div className="text2"><Link to="/add-task"><i class="bi bi-plus-circle"></i></Link></div>
                             </div>
                             {todos.map(todo=>{

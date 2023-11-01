@@ -8,6 +8,8 @@ const AddTask= ()=>{
     const[title, setTitle]=useState("");
     const [response_msg, setresponse_msg]=useState("");
     async function handleAddTask(e){
+        document.querySelector("#sbtBtn").style.display="none"
+        document.querySelector("#resbtn").style.display="inline-block"
         e.preventDefault();
         const resp = await fetch(`${BASE_URL}/add-todo`,{
             method:"POST",
@@ -19,6 +21,8 @@ const AddTask= ()=>{
         })
         const data= await resp.json()
         if (resp.ok){
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             setTitle("")
             setresponse_msg(data.detail)
             document.querySelector(".success_msg").style.display="block"
@@ -27,6 +31,8 @@ const AddTask= ()=>{
                 document.querySelector(".success_msg").style.display="none"
             }, 5000)
         }else{
+            document.querySelector("#sbtBtn").style.display="block"
+            document.querySelector("#resbtn").style.display="none"
             setresponse_msg(data.detail)
             document.querySelector(".error_msg").style.display="block"
             document.querySelector(".success_msg").style.display="none"
@@ -81,8 +87,13 @@ const AddTask= ()=>{
                                 </div>
                                 
                             </div>
-                            <div className="text-button text-center mt-3 p-0" style={{float:"right"}}>
-                                <button  type="submit">Create</button>
+                            <div style={{float:"right"}}>
+                                <div className="text-button text-center mt-3 p-0" id="sbtBtn">
+                                    <button  type="submit">Create</button>
+                                </div>
+                                <div className="spinner-border text-center text-primary mt-3" role="status" id="resbtn"> 
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
                         </form>
                     </div>
